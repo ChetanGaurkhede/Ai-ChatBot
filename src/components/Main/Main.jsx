@@ -17,7 +17,7 @@ const Main = () => {
   return (
     <div className="flex-1 min-h-[100vh] pb-[15vh] relative">
       <nav className="flex items-center justify-between text-[22px] p-[20px] text-[#585858]">
-        <p className="">Gemini</p>
+        <p className="">Ai-ChatBot</p>
         <img className="w-10 rounded-full" src={assets.user_icon} alt="" />
       </nav>
       <div className="max-w-[900px] m-auto">
