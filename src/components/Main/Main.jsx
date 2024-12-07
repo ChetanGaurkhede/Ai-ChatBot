@@ -13,6 +13,7 @@ const Main = () => {
     input,
     setInput,
   } = useContext(Context);
+  
 
   return (
     <div className="flex-1 min-h-[100vh] pb-[15vh] relative">
