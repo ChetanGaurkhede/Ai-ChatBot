@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import { assets } from "../../assets/assets";
 import { Context } from "../../context/Context";
-import './Main.css'
+import "./Main.css";
 
 const Main = () => {
   const {
@@ -13,7 +13,6 @@ const Main = () => {
     input,
     setInput,
   } = useContext(Context);
-  
 
   return (
     <div className="flex-1 min-h-[100vh] pb-[15vh] relative">
@@ -26,7 +25,9 @@ const Main = () => {
           <>
             <div className=" text-[56px] text-[#c4c7c5] font-extrabold p-[20px] ">
               <p>
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fea6de] to-[#5094fac7]">Hello, Dev.</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fea6de] to-[#5094fac7]">
+                  Hello, Dev.
+                </span>
               </p>
               <p>How can I help you today.</p>
             </div>
@@ -90,9 +91,9 @@ const Main = () => {
               {loading ? (
                 <div className="w-full fles flex-col gap-5 loader">
                   Wait responce is comming
-                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr"/>
-                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr"/>
-                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr"/>
+                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr" />
+                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr" />
+                  <hr className="rounded-5 border-none bg-[#f6f7f8] h-[20px] bg-[length:800px_50px] hr" />
                 </div>
               ) : (
                 <p dangerouslySetInnerHTML={{ __html: resultData }}></p>
@@ -106,6 +107,11 @@ const Main = () => {
             <input
               onChange={(e) => setInput(e.target.value)}
               value={input}
+              onKeyDown={(e) => {
+                if (e.key === "Enter") {
+                  onSent();
+                }
+              }}
               className="flex-1  bg-transparent border-none p-1 text-[18px] outline-none "
               type="text"
               placeholder="Enter promt here ..."
