@@ -14,10 +14,10 @@ const SideBar = () => {
 
   return (
     <div className="sidebar">
-      <div className="top flex flex-col justify-between items-center relative">
+      <div className="top flex flex-col justify-between relative">
         <img
           onClick={() => setExtended(!extended)}
-          className="menu "
+          className="menu ml-4"
           src={assets.menu_icon}
           alt=""
         />
@@ -26,7 +26,7 @@ const SideBar = () => {
           {extended && <p>New Chat</p>}
         </div>
         {extended && (
-          <div className="recent">
+          <div className="recent ml-3">
             <p className="recent-title">Recent</p>
             {prevPrompt.map((item, index) => {
               return (
